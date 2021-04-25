@@ -7,7 +7,6 @@ import fr.boivina.order.domain.query.repository.OrderRepository
 import org.axonframework.eventhandling.EventHandler
 import org.springframework.stereotype.Component
 
-@Component
 class OrderEventListener constructor(
     private val notificationRepository: NotificationRepository,
     private val orderRepository: OrderRepository) {

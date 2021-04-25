@@ -1,5 +1,8 @@
 package fr.boivina.order.application.configuration
 
+import fr.boivina.order.domain.query.OrderEventListener
+import fr.boivina.order.domain.query.repository.NotificationRepository
+import fr.boivina.order.domain.query.repository.OrderRepository
 import org.axonframework.common.jpa.EntityManagerProvider
 import org.axonframework.common.transaction.TransactionManager
 import org.axonframework.eventsourcing.eventstore.EventStorageEngine
@@ -25,7 +28,15 @@ class AxonConfig {
     @Bean
     fun eventStorageEngine(
         entityManagerProvider: EntityManagerProvider,
-        transactionManager: TransactionManager): EventStorageEngine {
+        transactionManager: TransactionManager
+                          ): EventStorageEngine {
         return InMemoryEventStorageEngine()
+    }
+
+    @Bean
+    fun orderEventListener(
+        notificationRepository: NotificationRepository,
+        orderRepository: OrderRepository): OrderEventListener {
+        return OrderEventListener(notificationRepository, orderRepository)
     }
 }
