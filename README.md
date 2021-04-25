@@ -1,13 +1,13 @@
 # Order APP
 
 ###
-Requires java >= 11, maven, npm >= 7
+Requires java >= 11, npm >= 7
 
 ### How to build
 
 Backend, using maven:
 ```shell
-mvn clean install
+./mvnw clean install
 ```
 
 Frontend, using npm
