@@ -6,7 +6,7 @@ import java.math.BigDecimal.ZERO
 data class Price(val value: BigDecimal) {
 
     init {
-        require(value > ZERO) { "Price id must be positive" }
+        require(value > ZERO) { "Price must be positive" }
     }
 
     companion object {
