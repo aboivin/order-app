@@ -1,6 +1,8 @@
 # Order APP
 
-###
+Example event sourcing and websocket application using Kotlin, Axon 4 with an hexagonal architecture
+
+### Requirements
 Requires java >= 11, npm >= 7
 
 ### How to build
